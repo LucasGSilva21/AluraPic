@@ -1,18 +1,27 @@
 <template>
-  <div id="app">
-    <h1>{{ title }}</h1>
+  <div id="app" class="body">
+    <h1 class="title">{{ title }}</h1>
 
-    <ul>
-      <li v-for="image of images" :key="image.description">
-        <img :src="image.url" :alt="image.description" />
+    <ul class="list">
+      <li class="list-item" v-for="image of images" :key="image.titulo">
+        <v-card :title="image.titulo">
+           <img class="image" :src="image.url" :alt="image.titulo">
+        </v-card>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+
+import Card from './components/card/Card.vue';
+
 export default {
   name: 'app',
+
+  components:{
+    'v-card': Card
+  },
 
   data () {
     return {
@@ -29,6 +38,35 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped>
+  #app {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
+  .body{
+    color: #fff;
+    background: #333;
+    font-family: Helvetica, sans-serif;
+    min-height: 100vh;
+  }
+
+  .title{
+    text-align: center;
+  }
+
+  .list{
+    list-style: none;
+  }
+
+  .list .list-item{
+    display: inline-block;
+  }
+
+  .image{
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+  }
 </style>
