@@ -1,7 +1,11 @@
 <template>
   <div class="card">
-    <slot></slot>
-    <h2 class="card-title">{{ title }}</h2>
+    <transition name="card-fade">
+      <div v-show="visible">
+        <slot></slot>
+      </div>
+    </transition>
+    <h2 class="card-title" @dblclick="visible = !visible">{{ title }}</h2>
     <div class="card-body">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -12,7 +16,13 @@
 
 <script>
 export default {
-  props: ['title']
+  props: ['title'],
+
+  data(){
+    return {
+      visible: true
+    }
+  }
 }
 </script>
 
@@ -43,5 +53,13 @@ export default {
   .card .card-body p{
     margin-left: 10px;
     margin-right: 10px;
+  }
+
+  .card-fade-enter, .card-fade-leave-active{
+    opacity: 0;
+  }
+
+  .card-fade-enter-active, .card-fade-leave-active{
+    transition: opacity .5s;
   }
 </style>
