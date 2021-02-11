@@ -7,7 +7,12 @@
     <ul class="list">
       <li class="list-item" v-for="image of imagesFilter" :key="image.titulo">
         <v-card :title="image.titulo">
-          <v-image :url="image.url" :title="image.titulo" />
+          <template v-slot:image>
+            <v-image :url="image.url" :title="image.titulo" />
+          </template>
+          <template v-slot:button>
+            <v-button text="Excluir" typeButton="danger" @active="remove($event, image)" :confirm="true" />
+          </template>
         </v-card>
       </li>
     </ul>
@@ -17,13 +22,15 @@
 <script>
   import Card from '../card/Card.vue';
   import Imagem from '../imagem/Imagem.vue';
+  import Button from '../button/Button.vue';
 
   export default {
     name: 'app',
 
     components:{
       'v-card': Card,
-      'v-image': Imagem
+      'v-image': Imagem,
+      'v-button': Button
     },
 
     data () {
@@ -31,6 +38,12 @@
         title: 'AluraPic',
         images: [],
         filter: []
+      }
+    },
+
+    methods: {
+      remove($event, image){
+        alert(`${$event} \n ${image.titulo} removido!!!`);
       }
     },
 
