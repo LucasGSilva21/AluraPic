@@ -2,28 +2,29 @@
   <div class="card">
     <transition name="card-fade">
       <div v-show="visible">
-        <slot></slot>
+        <slot name="image"></slot>
       </div>
     </transition>
     <h2 class="card-title" @dblclick="visible = !visible">{{ title }}</h2>
-    <div class="card-body">
+    <div class="card-text">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </p>
     </div>
+    <slot name="button"></slot>
   </div>
 </template>
 
 <script>
-export default {
-  props: ['title'],
+  export default {
+    props: ['title'],
 
-  data(){
-    return {
-      visible: true
+    data(){
+      return {
+        visible: true
+      }
     }
   }
-}
 </script>
 
 <style>
@@ -47,10 +48,10 @@ export default {
     text-transform: uppercase;
     margin-bottom: 5px;
   }
-  .card .card-body{
+  .card .card-text{
     width: 100%;
   }
-  .card .card-body p{
+  .card .card-text p{
     margin-left: 10px;
     margin-right: 10px;
   }
