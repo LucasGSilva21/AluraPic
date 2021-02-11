@@ -11,12 +11,11 @@
 </template>
 
 <script>
-  import { routes } from '../../routes';
-
   export default {
-    data(){
-      return {
-        routes
+    props: {
+      routes: {
+        type: Array,
+        required: true
       }
     }
   }
