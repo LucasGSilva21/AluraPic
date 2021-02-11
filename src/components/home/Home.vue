@@ -87,8 +87,12 @@
   }
 
   .filter{
-    display: block;
+    display: flex;
     width: 80%;
     margin: 0 auto;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
   }
 </style>
