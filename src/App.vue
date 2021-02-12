@@ -31,11 +31,11 @@
     margin-top: 0;
   }
 
-  .page-enter, .page-leave-active{
+  .page-enter, .page-leave-to{
     opacity: 0;
   }
 
-  .page-enter-active, .page-leave-active{
+  .page-enter-active, .page-leave-to{
     transition: opacity .5s;
   }
 </style>
