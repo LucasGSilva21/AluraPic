@@ -1,6 +1,6 @@
 <template>
   <div class="body">
-    <h1 class="title">{{ title }}</h1>
+    <v-title>{{ title }}</v-title>
 
     <input type="search" class="filter" @input="filter = $event.target.value" placeholder="Filtre pelo título">
 
@@ -23,14 +23,16 @@
   import Card from '../../components/card/Card.vue';
   import Imagem from '../../components/imagem/Imagem.vue';
   import Button from '../../components/button/Button.vue';
+  import Title from '../../components/title/Title.vue';
 
   export default {
-    name: 'app',
+    name: 'Home',
 
     components:{
       'v-card': Card,
       'v-image': Imagem,
-      'v-button': Button
+      'v-button': Button,
+      'v-title': Title,
     },
 
     data () {
@@ -75,12 +77,6 @@
   .body{
     display: flex;
     flex-direction: column;
-  }
-
-  .title{
-    width: 100%;
-    text-align: center;
-    color: #333;
   }
 
   .filter{

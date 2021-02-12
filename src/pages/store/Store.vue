@@ -1,15 +1,19 @@
 <template>
-  <h2 class="title">Cadastro</h2>
+  <v-title>Cadastro</v-title>
 </template>
 
 <script>
-export default {
+  import Title from '../../components/title/Title.vue';
 
-}
+  export default {
+    name: 'Cadastro',
+
+    components:{
+      'v-title': Title,
+    },
+  }
 </script>
 
 <style scoped>
-  .title{
-    text-align: center;
-  }
+
 </style>
