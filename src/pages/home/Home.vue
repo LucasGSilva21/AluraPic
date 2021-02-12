@@ -20,9 +20,9 @@
 </template>
 
 <script>
-  import Card from '../card/Card.vue';
-  import Imagem from '../imagem/Imagem.vue';
-  import Button from '../button/Button.vue';
+  import Card from '../../components/card/Card.vue';
+  import Imagem from '../../components/imagem/Imagem.vue';
+  import Button from '../../components/button/Button.vue';
 
   export default {
     name: 'app',
