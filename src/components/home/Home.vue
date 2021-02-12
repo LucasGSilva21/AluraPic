@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="body">
     <h1 class="title">{{ title }}</h1>
 
-    <input type="search" class="filter" v-on:input="filter = $event.target.value" placeholder="Filtre pelo título">
+    <input type="search" class="filter" @input="filter = $event.target.value" placeholder="Filtre pelo título">
 
     <ul class="list">
       <li class="list-item" v-for="image of imagesFilter" :key="image.titulo">
@@ -67,23 +67,20 @@
 </script>
 
 <style scoped>
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
   .body{
-    color: #fff;
-    background: #333;
-    font-family: Helvetica, sans-serif;
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   .title{
+    width: 100%;
     text-align: center;
-  }
-
-  .list{
-    list-style: none;
-  }
-
-  .list .list-item{
-    display: inline-block;
+    color: #333;
   }
 
   .filter{
@@ -94,5 +91,21 @@
     font-size: 18px;
     border-radius: 10px;
     border: none;
+    border: 1px solid #333;
+  }
+
+  .list{
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-top: 30px;
+  }
+
+  .list .list-item{
+    padding: 10px;
   }
 </style>

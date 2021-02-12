@@ -28,8 +28,7 @@
 
 <style scoped>
   .body{
-    margin: 0;
-    padding: 0;
+    margin-top: 0;
   }
 
   .page-enter, .page-leave-active{

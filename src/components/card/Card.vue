@@ -29,31 +29,27 @@
 
 <style>
   .card{
-    padding: 0 auto;
-    background-color: #f3f3f3;
+    background: white;
     border-radius: 10px;
     width: 300px;
-    height: 400px;
-    vertical-align: top;
     text-align: center;
-    display: inline-block;
-    margin: 10px;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    box-shadow: 9px 7px 5px #bdbdbd;
   }
 
   .card .card-title{
     text-align: center;
-    margin: 0;
-    padding-top: 10px;
     text-transform: uppercase;
-    margin-bottom: 5px;
   }
   .card .card-text{
     width: 100%;
   }
   .card .card-text p{
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .card-fade-enter, .card-fade-leave-active{

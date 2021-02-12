@@ -50,10 +50,10 @@ export default {
   }
 
   .default{
-    background: darkcyan;
+    background: #3498db;
   }
 
   .danger{
-    background: firebrick;
+    background: #e74c3c;
   }
 </style>
