@@ -47,6 +47,12 @@ export default {
     color: #fff;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
+  }
+
+  button:hover{
+    background: #c0392b;
+    transition: .2s;
   }
 
   .default{
