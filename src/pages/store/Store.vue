@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-title>Cadastro</v-title>
+    <my-title>Cadastro</my-title>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in imperdiet augue. Ut vulputate ultricies commodo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi suscipit orci arcu, ac tincidunt lectus cursus sed. Phasellus tristique dapibus odio in convallis. Duis eu velit eu ante pharetra porta et sed massa. Vestibulum tempus justo sed nisl vulputate convallis. Mauris in sapien sit amet nisl vestibulum iaculis nec ac metus. Suspendisse consectetur sem arcu, a gravida odio feugiat a. Proin pretium velit sed mollis dignissim. Mauris suscipit felis eget risus efficitur mattis. In porta urna vel consectetur ullamcorper. Etiam laoreet velit sit amet risus ultricies suscipit. Maecenas non augue placerat, posuere elit sit amet, eleifend urna. Vivamus accumsan laoreet gravida.
@@ -18,7 +18,7 @@
     name: 'Cadastro',
 
     components:{
-      'v-title': Title,
+      'my-title': Title,
     },
   }
 </script>

@@ -1,19 +1,19 @@
 <template>
   <div class="body">
-    <v-title>{{ title }}</v-title>
+    <my-title>{{ title }}</my-title>
 
     <input type="search" class="filter" @input="filter = $event.target.value" placeholder="Filtre pelo título">
 
     <ul class="list">
       <li class="list-item" v-for="image of imagesFilter" :key="image.titulo">
-        <v-card :title="image.titulo">
+        <my-card :title="image.titulo">
           <template v-slot:image>
-            <v-image :url="image.url" :title="image.titulo" />
+            <my-image :url="image.url" :title="image.titulo" />
           </template>
           <template v-slot:button>
-            <v-button text="Excluir" typeButton="danger" @active="remove($event, image)" :confirm="true" />
+            <my-button text="Excluir" typeButton="danger" @active="remove($event, image)" :confirm="true" />
           </template>
-        </v-card>
+        </my-card>
       </li>
     </ul>
   </div>
@@ -29,10 +29,10 @@
     name: 'Home',
 
     components:{
-      'v-card': Card,
-      'v-image': Imagem,
-      'v-button': Button,
-      'v-title': Title,
+      'my-card': Card,
+      'my-image': Imagem,
+      'my-button': Button,
+      'my-title': Title,
     },
 
     data () {
