@@ -96,7 +96,7 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: stretch;
     padding-top: 30px;
   }
