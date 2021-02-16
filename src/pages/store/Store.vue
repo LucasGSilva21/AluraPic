@@ -22,7 +22,7 @@
 
       <div class="container-buttons">
         <div class="button">
-          <router-link to="/"><my-botton text="VOLTAR" typeButton="default"/></router-link>
+          <router-link :to="{name: 'home'}"><my-botton text="VOLTAR" typeButton="default"/></router-link>
         </div>
         <div class="button">
           <my-botton text="GRAVAR" typeButton="save"/>
