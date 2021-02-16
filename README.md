@@ -1,6 +1,6 @@
 # alura
 
-> A Vue.js project
+Projeto desenvolvido no curso de Vue.js da Alura do instrutor Flávio Henrique de Souza Almeida.
 
 ## Build Setup
 
