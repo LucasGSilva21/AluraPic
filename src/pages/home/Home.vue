@@ -12,7 +12,7 @@
           </template>
           <template v-slot:button>
             <div class="container-button">
-              <my-button text="Excluir" typeButton="danger" @active="remove($event, image)" :confirm="true" />
+              <my-button text="EXCLUIR" typeButton="danger" @active="remove($event, image)" :confirm="true" />
             </div>
           </template>
         </my-card>

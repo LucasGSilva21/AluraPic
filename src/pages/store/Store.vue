@@ -120,6 +120,6 @@
 
   .button {
     padding: 10px;
-    min-width: 300px;
+    min-width: 270px;
   }
 </style>
