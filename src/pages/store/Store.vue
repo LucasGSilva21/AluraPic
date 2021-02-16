@@ -1,31 +1,94 @@
 <template>
   <div>
     <my-title>Cadastro</my-title>
+    <form>
+      <div class="container">
+        <label for="titulo">TÍTULO</label>
+        <input class="item" id="titulo" autocomplete="off">
+      </div>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in imperdiet augue. Ut vulputate ultricies commodo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi suscipit orci arcu, ac tincidunt lectus cursus sed. Phasellus tristique dapibus odio in convallis. Duis eu velit eu ante pharetra porta et sed massa. Vestibulum tempus justo sed nisl vulputate convallis. Mauris in sapien sit amet nisl vestibulum iaculis nec ac metus. Suspendisse consectetur sem arcu, a gravida odio feugiat a. Proin pretium velit sed mollis dignissim. Mauris suscipit felis eget risus efficitur mattis. In porta urna vel consectetur ullamcorper. Etiam laoreet velit sit amet risus ultricies suscipit. Maecenas non augue placerat, posuere elit sit amet, eleifend urna. Vivamus accumsan laoreet gravida.
-    </p>
-    <p>
-      Phasellus commodo rhoncus nibh sed dignissim. Sed hendrerit metus id ipsum cursus congue. In porttitor elementum lectus, vitae viverra nibh auctor convallis. Sed dui leo, laoreet in dolor a, facilisis aliquam lacus. Ut posuere odio et tortor pharetra, sed volutpat leo viverra. Nulla vel libero diam. Suspendisse potenti. Duis vestibulum urna et ante ullamcorper ornare. Quisque iaculis sollicitudin mi ut placerat. Integer sodales libero enim, et elementum massa porta a. Mauris dui tortor, eleifend et vestibulum in, cursus ac elit. Maecenas enim magna, luctus non lectus at, molestie porta libero. Phasellus efficitur, ligula non ultrices blandit, erat urna lobortis nulla, ut auctor ligula sem quis libero. Curabitur arcu magna, aliquet sed elit id, lobortis dignissim nulla. Nulla vehicula in dolor sed lacinia.
-    </p>
+      <div class="container">
+        <label for="url">URL</label>
+        <input class="item" id="url" autocomplete="off">
+        <my-imagem/>
+      </div>
+
+      <div class="container">
+        <label class="label-description" for="descricao">DESCRIÇÃO</label>
+        <textarea class="item" id="descricao" autocomplete="off"></textarea>
+      </div>
+
+      <div class="container-buttons">
+        <div class="button">
+          <router-link to="/"><my-botton text="VOLTAR" typeButton="default"/></router-link>
+        </div>
+        <div class="button">
+          <my-botton text="GRAVAR" typeButton="save"/>
+        </div>
+      </div>
+    </form>
   </div>
 </template>
 
 <script>
   import Title from '../../components/title/Title.vue';
+  import Imagem from '../../components/imagem/Imagem.vue';
+  import Botton from '../../components/button/Button.vue';
 
   export default {
     name: 'Cadastro',
 
     components:{
       'my-title': Title,
+      'my-imagem': Imagem,
+      'my-botton': Botton
     },
   }
 </script>
 
 <style scoped>
-  p{
-    margin: 0 auto;
+  form {
     width: 80%;
+    margin: 0 auto;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+
+  .label-description {
+    margin-top: 20px;
+  }
+
+  textarea {
+    min-height: 150px;
+  }
+
+  .container-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    padding: 10px;
+    min-width: 300px;
   }
 </style>
