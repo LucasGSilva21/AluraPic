@@ -47,7 +47,15 @@
 
     methods: {
       remove($event, image){
-        alert(`${$event} \n ${image.titulo} removido!!!`);
+        this.$http.delete(`http://localhost:3000/v1/fotos/${image._id}`)
+          .then(() => {
+              const index = this.images.indexOf(image);
+              this.images.splice(index, 1);
+              alert(`${$event} \n ${image.titulo} removido!!!`)
+            }, err => {
+              console.log(err);
+              alert(`${image.titulo} não foi removido!!!`);
+            });
       }
     },
 
