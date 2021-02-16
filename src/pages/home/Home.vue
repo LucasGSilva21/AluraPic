@@ -11,7 +11,9 @@
             <my-image :url="image.url" :title="image.titulo" />
           </template>
           <template v-slot:button>
-            <my-button text="Excluir" typeButton="danger" @active="remove($event, image)" :confirm="true" />
+            <div class="container-button">
+              <my-button text="Excluir" typeButton="danger" @active="remove($event, image)" :confirm="true" />
+            </div>
           </template>
         </my-card>
       </li>
@@ -103,5 +105,10 @@
 
   .list .list-item{
     padding: 10px;
+  }
+
+  .container-button{
+    width: 90%;
+    margin: 0 auto;
   }
 </style>
