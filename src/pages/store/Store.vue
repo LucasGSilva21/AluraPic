@@ -59,7 +59,7 @@
     methods: {
       store(){
         this.$http
-          .post('http://localhost:3000/v1/fotos', this.image)
+          .post('v1/fotos', this.image)
           .then(() => this.image = {
             titulo: '',
             url: '',

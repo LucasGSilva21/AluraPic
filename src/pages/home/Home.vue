@@ -47,7 +47,7 @@
 
     methods: {
       remove($event, image){
-        this.$http.delete(`http://localhost:3000/v1/fotos/${image._id}`)
+        this.$http.delete(`v1/fotos/${image._id}`)
           .then(() => {
               const index = this.images.indexOf(image);
               this.images.splice(index, 1);
@@ -71,7 +71,7 @@
     },
 
     created() {
-      this.$http.get('http://localhost:3000/v1/fotos')
+      this.$http.get('v1/fotos')
         .then(res => res.json())
         .then(images => this.images = images);
     }
