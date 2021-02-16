@@ -45,7 +45,8 @@
     text-transform: uppercase;
   }
   .card .card-text{
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
   .card .card-text p{
     padding-left: 10px;
