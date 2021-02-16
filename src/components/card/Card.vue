@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <transition name="card-fade">
-      <div v-show="visible">
+      <div class="image" v-show="visible">
         <slot name="image"></slot>
       </div>
     </transition>
@@ -59,5 +59,10 @@
 
   .card-fade-enter-active, .card-fade-leave-active{
     transition: opacity .5s;
+  }
+
+  .image{
+    width: 100%;
+    height: 200px;
   }
 </style>

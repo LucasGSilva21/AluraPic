@@ -1,21 +1,23 @@
 <template>
   <div>
     <my-title>Cadastro</my-title>
-    <form>
+    <form @submit.prevent="store()">
       <div class="container">
         <label for="titulo">TÍTULO</label>
-        <input class="item" id="titulo" autocomplete="off">
+        <input class="item" id="titulo" autocomplete="off" v-model="image.titulo">
       </div>
 
       <div class="container">
         <label for="url">URL</label>
-        <input class="item" id="url" autocomplete="off">
-        <my-imagem/>
+        <input class="item" id="url" autocomplete="off" v-model.lazy="image.url">
+        <div class="image">
+          <my-imagem :url="image.url" :title="image.titulo" />
+        </div>
       </div>
 
       <div class="container">
         <label class="label-description" for="descricao">DESCRIÇÃO</label>
-        <textarea class="item" id="descricao" autocomplete="off"></textarea>
+        <textarea class="item" id="descricao" autocomplete="off" v-model="image.descricao"></textarea>
       </div>
 
       <div class="container-buttons">
@@ -43,6 +45,28 @@
       'my-imagem': Imagem,
       'my-botton': Botton
     },
+
+    data(){
+      return {
+        image: {
+          titulo: '',
+          url: '',
+          descricao: ''
+        }
+      }
+    },
+
+    methods: {
+      store(){
+        this.$http
+          .post('http://localhost:3000/v1/fotos', this.image)
+          .then(() => this.image = {
+            titulo: '',
+            url: '',
+            descricao: ''
+          }, err => console.log(err));
+      }
+    }
   }
 </script>
 
@@ -71,6 +95,12 @@
     border: 1px solid #333;
     box-sizing: border-box;
     margin-bottom: 20px;
+  }
+
+  .image {
+    margin: 0 auto;
+    width: 300px;
+    height: auto;
   }
 
   .label-description {

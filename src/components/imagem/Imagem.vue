@@ -11,7 +11,8 @@ export default {
 <style scoped>
   .image{
     width: 100%;
-    max-height: 180px;
+    height: 100%;
+    overflow: hidden;
     border-radius: 10px 10px 0px 0px;
   }
 </style>
