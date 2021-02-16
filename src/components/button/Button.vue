@@ -21,7 +21,8 @@ export default {
     computed: {
       styleButton(){
         if(this.typeButton == 'default' || !this.typeButton) return 'default';
-        if(this.typeButton == 'danger')return 'danger'
+        if(this.typeButton == 'save') return 'save';
+        if(this.typeButton == 'danger') return 'danger';
       }
     },
 
@@ -41,7 +42,7 @@ export default {
 
 <style scoped>
   button {
-    width: 80%;
+    width: 100%;
     height: 40px;
     margin: 0 auto;
     color: #fff;
@@ -50,16 +51,30 @@ export default {
     cursor: pointer;
   }
 
-  button:hover{
-    background: #c0392b;
-    transition: .2s;
-  }
-
-  .default{
+  .default {
     background: #3498db;
   }
 
-  .danger{
+  .default:hover {
+    background: #2980b9;
+    transition: .2s;
+  }
+
+  .save {
+    background: #149414;
+  }
+
+  .save:hover {
+    background: #0e6b0e;
+    transition: .2s;
+  }
+
+  .danger {
     background: #e74c3c;
+  }
+
+  .danger:hover {
+    background: #c0392b;
+    transition: .2s;
   }
 </style>
