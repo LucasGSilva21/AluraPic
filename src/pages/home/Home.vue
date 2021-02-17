@@ -12,6 +12,7 @@
           </template>
           <template v-slot:button>
             <div class="container-button">
+              <my-button text="ALTERAR" />
               <my-button text="EXCLUIR" typeButton="danger" @active="remove($event, image)" :confirm="true" />
             </div>
           </template>
@@ -118,5 +119,9 @@
   .container-button{
     width: 90%;
     margin: 0 auto;
+  }
+
+  .container-button button{
+    margin-top: 10px;
   }
 </style>

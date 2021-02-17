@@ -11,10 +11,7 @@ export default {
             type: String,
             required: true,
         },
-        typeButton: {
-            type: String,
-            required: true,
-        },
+        typeButton: String,
         confirm: Boolean,
     },
 
