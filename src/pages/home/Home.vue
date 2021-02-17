@@ -12,7 +12,9 @@
           </template>
           <template v-slot:button>
             <div class="container-button">
-              <my-button text="ALTERAR" />
+              <router-link :to="{name: 'edit', params: { id: image._id } }">
+                <my-button text="ALTERAR" />
+              </router-link>
               <my-button text="EXCLUIR" typeButton="danger" @active="remove($event, image)" :confirm="true" />
             </div>
           </template>

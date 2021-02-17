@@ -1,6 +1,7 @@
 <template>
   <div>
-    <my-title>Cadastro</my-title>
+    <my-title v-if="image._id">Edição</my-title>
+    <my-title v-else >Cadastro</my-title>
     <form @submit.prevent="store()">
       <div class="container">
         <label for="titulo">TÍTULO</label>
@@ -52,19 +53,41 @@
           titulo: '',
           url: '',
           descricao: ''
-        }
+        },
+        id: this.$route.params.id
       }
     },
 
     methods: {
       store(){
+        if(this.id){
+          this.$http
+            .put(`v1/fotos/${this.id}`, this.image)
+            .then(() => {
+              this.image = {
+                titulo: '',
+                url: '',
+                descricao: ''
+              };
+              this.$router.push({ name: 'home' });
+            }, err => console.log(err));
+        }else{
+          this.$http
+            .post('v1/fotos', this.image)
+            .then(() => this.image = {
+              titulo: '',
+              url: '',
+              descricao: ''
+            }, err => console.log(err));
+        }
+      }
+    },
+
+    created(){
+      if(this.id){
         this.$http
-          .post('v1/fotos', this.image)
-          .then(() => this.image = {
-            titulo: '',
-            url: '',
-            descricao: ''
-          }, err => console.log(err));
+          .get(`v1/fotos/${this.id}`)
+          .then(image => this.image = image.data, err => console.log(err));
       }
     }
   }
