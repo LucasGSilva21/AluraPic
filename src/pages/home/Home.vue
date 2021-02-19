@@ -4,6 +4,8 @@
 
     <input type="search" class="filter" @input="filter = $event.target.value" placeholder="Filtre pelo título">
 
+    <span class="error">{{ error }}</span>
+
     <ul class="list">
       <li class="list-item" v-for="image of imagesFilter" :key="image.titulo">
         <my-card :title="image.titulo">
@@ -44,7 +46,8 @@
       return {
         title: 'AluraPic',
         images: [],
-        filter: []
+        filter: [],
+        error: ''
       }
     },
 
@@ -75,7 +78,7 @@
 
     created() {
       this.$http.get('v1/fotos')
-        .then(res => res.json())
+        .then(res => res.json(), err => this.error = 'Não foi possível carregar as fotos. Tente novamente mais tarde.')
         .then(images => this.images = images);
     }
   }
@@ -101,6 +104,13 @@
     border-radius: 10px;
     border: none;
     border: 1px solid #333;
+  }
+
+  .error {
+    color: red;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
   }
 
   .list{
